@@ -1,0 +1,27 @@
+{
+  "version": 3,
+  "cmakeMinimumRequired": {
+    "major": 3,
+    "minor": 14,
+    "patch": 0
+  },
+  "configurePresets": [
+    {
+      "name": "useme",
+      "displayName": "useme",
+      "generator": "Ninja",
+      "binaryDir": "${sourceDir}/out/build",
+      "installDir": "${sourceDir}/out/install",
+      "cacheVariables": {
+        "CMAKE_BUILD_TYPE": "Debug",
+        "CMAKE_C_COMPILER": "clang",
+        "CMAKE_CXX_COMPILER": "clang++",
+        "CMAKE_CXX_FLAGS": "-Og -g3 -glldb -fsanitize=address",
+        "CPPTRACE_BUILD_SHARED": "OFF",
+        "CPPTRACE_UNWIND_WITH_UNWIND": "ON",
+        "CPPTRACE_GET_SYMBOLS_WITH_LIBDWARF": "ON",
+        "CPPTRACE_DEMANGLE_WITH_CXXABI": "ON"
+      }
+    }
+  ]
+}
